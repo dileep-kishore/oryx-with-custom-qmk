@@ -52,6 +52,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MS_BTN1,     KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_BTN2
   ),
 };
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MT(MOD_LALT, KC_A):
+            return TAPPING_TERM + 50;
+        case MT(MOD_LGUI, KC_S):
+            return TAPPING_TERM + 50;
+        case MT(MOD_LSFT, KC_D):
+            return TAPPING_TERM + 50;
+        case MT(MOD_LCTL, KC_F):
+            return TAPPING_TERM + 50;
+        case MT(MOD_RCTL, KC_J):
+            return TAPPING_TERM + 50;
+        case MT(MOD_RSFT, KC_K):
+            return TAPPING_TERM + 50;
+        case MT(MOD_LGUI, KC_L):
+            return TAPPING_TERM + 50;
+        case LT(1,KC_SCLN):
+            return TAPPING_TERM + 50;
+        default:
+            return TAPPING_TERM;
+    }
+}
 
 extern rgb_config_t rgb_matrix_config;
 
